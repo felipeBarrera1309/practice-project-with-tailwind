@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require('tailwindcss/plugin')
+
 export default {
   content: [
     "./index.html",
@@ -15,7 +18,6 @@ export default {
         '9xl': '128rem',
       },
       colors: {
-        'blue': '#1fb6ff',
         'purple': '#7e5bef',
         'pink': '#ff49db',
         'orange': '#ff7849',
@@ -32,8 +34,35 @@ export default {
       borderRadius: {
         '4xl': '2rem',
       },
+      screens: {
+        // responsive max-width
+          'small': { 'max': '640px' },
+          'medium': { 'max': '768px' },
+          'large': { 'max': '1024px' },
+          'x-large': { 'max': '1279px' },
+          '2-x-large': { 'max': '1535px' },
+          // responsive rango fijo
+          'f-small': { 'min': '640px', 'max': '767px' },
+          'f-medium': { 'min': '768px', 'max': '1023px' },
+          'f-large': { 'min': '1024px', 'max': '1279px' },
+          'f-x-large': { 'min': '1280px', 'max': '1535px' },
+          'f-2-x-large': { 'min': '1536px' }
+      },
     }
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addVariant, matchVariant }){
+      addVariant('hocus', ['&:hover', '&:focus']),
+      addVariant('optional', '&:optional'),
+      addVariant('inverted-colors', '@media (inverted-colors: inverted)'),
+      addVariant('third', '&:nth-child(3)'),
+      matchVariant(
+        'nth',
+        (value) => {
+          return `&:nth-child(${value})`
+        }
+      )
+    })
+  ],
 }
 

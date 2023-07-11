@@ -7,3 +7,12 @@
         --color-primary: rgb(255 115 179)
     }
 }
+
+@layer utilities {
+    .width-fit{
+        width: fit-content;
+    }
+    .transitionAction{
+        transition: all 0.3s ease-in-out;
+    }
+}
