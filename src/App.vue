@@ -85,13 +85,29 @@
     />
   </div>
 
-  <div class="text-2xl font-semibold italic text-center text-slate-900 mb-10">
-    When you look
-    <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink relative inline-block">
-      <span class="relative text-white">annoyed</span>
-    </span>
-    all the time, people think that you're busy.
+  <blockquote class="text-2xl font-semibold italic text-center text-slate-900 mb-12">
+  When you look
+  <span class="relative">
+    <span class="block absolute -inset-1 -skew-y-3 bg-pink" aria-hidden="true"></span>
+    <span class="relative text-white sr-only">annoyed</span>
+  </span>
+  all the time, people think that you're busy.
+  </blockquote>
+
+  <div class="flex flex-col mx-auto items-center w-3/5 mb-10 space-y-9">
+    <label class="bg-blue px-5 py-2" for="selectFile">selec one file</label>
+    <input type="file" id="selectFile" class="hidden" />
   </div>
+
+  <ul role="list" class="marker:text-sky-400 list-disc w-3/5 mx-auto space-y-10 mb-10 divide-y divide-slate-300">
+    <li>Yave Felipe Barrera Pico</li>
+    <li>Yave Felipe Barrera Pico</li>
+    <li>Yave Felipe Barrera Pico</li>
+    <li>Yave Felipe Barrera Pico</li>
+    <li>Yave Felipe Barrera Pico</li>
+  </ul>
+
+  
 
 </template>
 
