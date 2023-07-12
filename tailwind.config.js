@@ -23,7 +23,6 @@ export default {
         'pink': '#ff49db',
         'orange': '#ff7849',
         'gray-dark': '#273444',
-        'gray': '#8492a6',
         'gray-light': '#d3dce6',
         'rosado': 'var(--color-primary)',
         'amarillo': 'var(--color-amarillo)',

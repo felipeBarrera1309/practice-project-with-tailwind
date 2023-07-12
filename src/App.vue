@@ -1,6 +1,6 @@
 <template>
 
-  <nav class="container flex flex-wrap md:flex-nowrap items-center justify-between p-4 mx-auto my-20 bg-blue-400">
+  <nav class="container flex max-w-screen-md flex-wrap md:flex-nowrap items-center justify-between p-4 mx-auto my-20 bg-blue-400">
     <div class="flex items-center gap-x-3">
       <span v-html="iconChat" />
       <p class="font-bold text-lg text-white">Tailwind CSS</p>
@@ -14,11 +14,11 @@
     </div>
     <div ref="refTitles"  class="transitionAction w-full hidden justify-end grow md:block md:flex">
       <div class="text-white mx-auto flex-col md:flex-row flex items-center gap-4">
-        <a href="#" class="text-teal-200 hover:text-white">Docs</a>
-        <a href="#" class="text-teal-200 hover:text-white">Examples</a>
-        <a href="#" class="text-teal-200 hover:text-white">Blog</a>
+        <a href="#" class="transitionAction border-b-2 border-transparent text-teal-200 hover:text-white hover:border-b-2 hover:border-gray-400">Docs</a>
+        <a href="#" class="transitionAction border-b-2 border-transparent text-teal-200 hover:text-white hover:border-b-2 hover:border-gray-400">Examples</a>
+        <a href="#" class="transitionAction border-b-2 border-transparent text-teal-200 hover:text-white hover:border-b-2 hover:border-gray-400">Blog</a>
       </div>
-      <button class="border block transitionAction mx-auto md:mx-0 border-teal-400 text-teal-200 bg-transparent hover:text-white hover:border-white rounded-md px-3 py-1">Dowload</button>
+      <button class="border block transitionAction mx-auto md:mx-0 border-teal-400 hover:bg-teal-400 text-teal-200 bg-transparent hover:text-white hover:border-white rounded-md px-3 py-1">Dowload</button>
     </div>
   </nav>
 
