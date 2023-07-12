@@ -11,6 +11,7 @@ export default {
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
+      robo: ['Roboto']
     },
     extend: {
       spacing: {
@@ -18,15 +19,21 @@ export default {
         '9xl': '128rem',
       },
       colors: {
-        'purple': '#7e5bef',
+        purple: '#7e5bef',
         'pink': '#ff49db',
         'orange': '#ff7849',
         'green': '#13ce66',
-        'yellow': '#ffc82c',
         'gray-dark': '#273444',
         'gray': '#8492a6',
         'gray-light': '#d3dce6',
-        'rosado': 'var(--color-primary)'
+        'rosado': 'var(--color-primary)',
+        'amarillo': 'var(--color-amarillo)',
+        info: {
+          100: '#EDE9D5',
+          400: '#E7AB9A',
+          800: '#DF7857',
+          900: '#617143'
+        }
       },
       width: {
         '34': '136px'
