@@ -11,9 +11,12 @@ export default {
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
-      robo: ['Roboto']
     },
     extend: {
+      fontFamily: {
+        hank: ['"Hanken Grotesk"', 'sans-serif'],
+        robo: ['Roboto']
+      },
       spacing: {
         '8xl': '96rem',
         '9xl': '128rem',
