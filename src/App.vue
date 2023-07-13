@@ -9,7 +9,7 @@
       <p class="text-2xl font-bold">Great</p>
       <p class="inline-block text-gray-400 font-bold">You scored higher than 65% of the people who have taken these test</p>
     </section>
-    <section class="max-w-md mx-auto sm:w-full shadow-xl">
+    <section class="max-w-md mx-auto sm:w-full shadow-xl dark:bg-gray-800">
       <div class="px-10 py-5 space-y-6">
         <p>Summary</p>
         <template v-for="(data, index) in views" :key="index">
