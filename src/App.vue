@@ -9,7 +9,7 @@
       <p class="text-2xl font-bold">Great</p>
       <p class="inline-block text-gray-400 font-bold">You scored higher than 65% of the people who have taken these test</p>
     </section>
-    <section class="max-w-md mx-auto sm:w-full shadow-xl dark:bg-gray-800">
+    <section class="dark:bg-gray-800 max-w-md mx-auto sm:w-full shadow-xl">
       <div class="px-10 py-5 space-y-6">
         <p>Summary</p>
         <template v-for="(data, index) in views" :key="index">
@@ -20,14 +20,38 @@
             </div>
           </div>
         </template>
-        <button class="w-full py-2 rounded-full bg-gray-800 text-white">Continue</button>
+        <button class="w-full py-2 rounded-full bg-gray-800 text-white" @click="changeModeDark">Night / day</button>
       </div>
     </section>
   </article>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onBeforeMount } from 'vue';
+
+onBeforeMount(() => {
+  // changeModeDark()
+})
+
+function changeModeDark(){
+  console.log('estas son las preferencias de mi pc: ', window.matchMedia('(prefers-color-scheme)'));
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+
+localStorage.setItem('theme', 'dark')
+
+// // Whenever the user explicitly chooses light mode
+// localStorage.theme = 'light'
+
+// // Whenever the user explicitly chooses dark mode
+// localStorage.theme = 'dark'
+
+// // Whenever the user explicitly chooses to respect the OS preference
+// localStorage.removeItem('theme')
+}
 
 const views = ref([
   { name: 'reaction', viewOne: 80, color: 'text-red-400', bg: 'bg-red-100' },
