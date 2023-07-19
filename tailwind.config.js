@@ -71,7 +71,8 @@ export default {
           return `&:nth-child(${value})`
         }
       )
-    })
+    }),
+    require('@tailwindcss/typography'),
   ],
 }
 
