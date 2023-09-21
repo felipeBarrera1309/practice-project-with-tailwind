@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const plugin = require('tailwindcss/plugin')
+// const plugin = require('tailwindcss/plugin')
 
 export default {
   darkMode: 'class',
@@ -60,19 +60,19 @@ export default {
     }
   },
   plugins: [
-    plugin(function({ addVariant, matchVariant }){
-      addVariant('hocus', ['&:hover', '&:focus']),
-      addVariant('optional', '&:optional'),
-      addVariant('inverted-colors', '@media (inverted-colors: inverted)'),
-      addVariant('third', '&:nth-child(3)'),
-      matchVariant(
-        'nth',
-        (value) => {
-          return `&:nth-child(${value})`
-        }
-      )
-    }),
-    require('@tailwindcss/typography'),
+    // plugin(function({ addVariant, matchVariant }){
+    //   addVariant('hocus', ['&:hover', '&:focus']),
+    //   addVariant('optional', '&:optional'),
+    //   addVariant('inverted-colors', '@media (inverted-colors: inverted)'),
+    //   addVariant('third', '&:nth-child(3)'),
+    //   matchVariant(
+    //     'nth',
+    //     (value) => {
+    //       return `&:nth-child(${value})`
+    //     }
+    //   )
+    // }),
+    // require('@tailwindcss/typography'),
   ],
 }
 
