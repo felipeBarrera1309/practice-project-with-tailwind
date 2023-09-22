@@ -17,6 +17,11 @@ const router = createRouter({
 					path: 'cropperjs',
 					name: 'content.cropper',
 					component: () => import('../components/cropper.vue')
+				},
+				{
+					path: 'filePond',
+					name: 'file.pond',
+					component: () => import('../components/filePond.vue')
 				}
 			]
 		}
