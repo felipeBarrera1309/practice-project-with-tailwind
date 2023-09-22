@@ -33,6 +33,7 @@ watch( route,
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '../src/assets/sass/styles.scss';
 
 </style>

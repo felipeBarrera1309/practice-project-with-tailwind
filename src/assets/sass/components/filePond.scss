@@ -1,0 +1,9 @@
+.filepond--wrapper{
+	@apply flex max-w-[800px] mx-auto max-h-[120px];
+	.filepond--root{
+		@apply w-full h-full;
+		.filepond--drop-label{
+			@apply bg-slate-300 h-full max-h-[400px];
+		}
+	}
+}
