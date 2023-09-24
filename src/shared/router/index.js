@@ -14,6 +14,11 @@ const router = createRouter({
 					component : () => import('../components/viewMain.vue')
 				},
 				{
+					path: 'full-calendar',
+					name: 'full.calendar',
+					component: () => import('../components/fullCalendar.vue')
+				},
+				{
 					path: 'cropperjs',
 					name: 'content.cropper',
 					component: () => import('../components/cropper.vue')
