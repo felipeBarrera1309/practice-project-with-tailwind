@@ -1,7 +1,13 @@
 <template>
     <section class="mx-auto w-full">
         <button class="bg-slate-700 text-white px-10 py-1 rounded-lg block mx-auto my-6" @click="prevCalendar">PREV</button>
-        <FullCalendar ref="refFullCalendar" v-bind:options="calendarOptions" />
+        <FullCalendar ref="refFullCalendar" :options="calendarOptions" >
+            <template #eventContent="arg">
+                <p>
+                    contenido del evento {{ arg.event.title }}
+                </p>
+            </template>
+        </FullCalendar>
     </section>
 </template>
 
@@ -30,31 +36,6 @@ const calendarOptions = ref({
         left: 'timeGridWeek timeGridDay listWeek dayGridWeek dayGridMonth'
     },
     hiddenDays: [1],
-    dayHeaderFormat: {
-        weekday: 'long',
-        omitCommas: true,
-        month: 'numeric'
-    },
-    slotDuration: '00:20:00',
-    slotLabelFormat: [
-        {
-            hour: '2-digit',
-            minute: 'numeric'
-        },
-        {
-            weekday: 'long'
-        }
-    ],
-    slotMinTime: '00:00:00',
-    slotMaxTime: '14:00:00',
-    scrollTime: '10:00:00',
-    scrollToTime: '10:00',
-    firstDay: 4,
-    showNonCurrentDates: true,
-    validRange: {
-        start: '2023-09-01',
-        end: '2023-11-01'
-    },
     events: [
         {
             id: 12,
@@ -68,23 +49,25 @@ const calendarOptions = ref({
             borderColor: 'green',
         }
     ],
-    defaultAllDay: true,
-    navLinks: true,
-    weekNumbers: true,
-    droppable: true,
-    editable: true,
-    eventDragMinDistance: 1,
     // navLinkDayClick: function(date, jsEvent) {
     //     console.log('day', date.toISOString());
     //     console.log('coords', jsEvent.pageX, jsEvent.pageY);
     // },
     eventDrop: function(info){
         console.log('Estos son los valores: ', info);
-    }
+    },
+    dateClick: ejecutarClck,
+    weekends: true
 })
 
 function prevCalendar(){
-    console.log('Valores de la referencia: ', refFullCalendar.value);
+    console.log('Obtener fecha: ', refFullCalendar.value.getApi().getDate());
+    calendarOptions.value.weekends = true
+    console.log('Este es el valor del objeto: ', calendarOptions.value.weekends);
+}
+
+function ejecutarClck(info){
+    console.log('EBRJKHRJHFJKDHFIO', info);
 }
 
 </script>
