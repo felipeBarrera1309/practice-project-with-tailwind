@@ -4,10 +4,9 @@
 
 <script setup>
 import { computed, watch } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { useRoute } from 'vue-router';
 import base from './shared/layouts/base.vue';
 
-const router = useRouter()
 const route = useRoute()
 
 const seeComponents = {
