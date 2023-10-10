@@ -11,7 +11,9 @@ const useCounterStore = defineStore({
 		}
 	},
 	actions: {
-
+		replaceNumber(newValue = 20){
+			this.counter = newValue;
+		}
 	}
 })
 
