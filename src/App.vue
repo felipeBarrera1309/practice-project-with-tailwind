@@ -6,11 +6,13 @@
 import { computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import base from './shared/layouts/base.vue';
+import auth from './shared/layouts/auth.vue'
 
 const route = useRoute()
 
 const seeComponents = {
-	'base':  base
+	'base':  base,
+	'auth': auth
 }
 
 const components = computed(() => {

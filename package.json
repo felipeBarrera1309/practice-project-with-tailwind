@@ -24,8 +24,10 @@
     "@pqina/vue-pintura": "^9.0.1",
     "bootstrap": "^4.6.2",
     "bootstrap-icons": "^1.11.1",
+    "element-plus": "^2.4.0",
     "filepond-plugin-file-poster": "^2.5.1",
     "pinia": "^2.1.6",
+    "vee-validate": "^4.11.8",
     "vue": "^3.3.4",
     "vue-filepond": "^7.0.4",
     "vue-router": "^4.2.4"
