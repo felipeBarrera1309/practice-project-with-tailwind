@@ -1,16 +1,15 @@
 <template>
     <section class="flex flex-col items- justify-center m-auto w-[800px] h-screen">
-        <Form v-slot="{ meta }" @submit="sendForm" class="flex flex-col items-center gap-y-6">
+        <Form @submit="sendForm" class="flex flex-col items-center gap-y-6">
             <Field
-                v-slot="{ field, errorMessage, meta }"
+                v-slot="{ field, errorMessage }"
                 name="email"
+                type="email"
                 rules="required|email"
                 class="h-[40px] w-[300px] border-2 rounded-md border-violet-700"
             >
-                <el-input v-model="writeEmail" v-bind="field" placeholder="Correo electrónico" class="max-w-[300px] h-[40px]" />
+                <el-input type="email" v-model="writeEmail" v-bind="field" placeholder="Correo electrónico" class="max-w-[300px] h-[40px]" />
                 <span class="text-red-500">{{ errorMessage }}</span>
-                <span>{{ meta }}</span>
-                <span v-if="meta.valid">✅ Field is valid</span>
             </Field>
 
             <Field
@@ -23,8 +22,7 @@
                 <el-input type="password" v-model="writePassword" v-bind="field" placeholder="Contraseña" show-password class="max-w-[300px] h-[40px]" />
                 <span class="text-red-500">{{ errorMessage }}</span>
             </Field>
-            {{ meta }}
-            <button :disabled="!meta.dirty" type="submit" class="bg-blue-600 text-white px-4 py-1 rounded-md">Ingresar</button>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-1 rounded-md">Ingresar</button>
         </Form>
     </section>
 </template>
