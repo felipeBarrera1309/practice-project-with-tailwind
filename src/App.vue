@@ -1,12 +1,20 @@
 <template>
-	<component :is="components" />
+	<Suspense timeout="0">
+		<template #default>
+			<component :is="components" />
+		</template>
+		<template #fallback>
+			<loading />
+		</template>
+	</Suspense>
 </template>
 
 <script setup>
-import { computed, watch } from 'vue';
+import { computed, watch, defineAsyncComponent } from 'vue';
 import { useRoute } from 'vue-router';
-import base from './shared/layouts/base.vue';
-import auth from './shared/layouts/auth.vue'
+import loading from './shared/components/loading.vue';
+const base = defineAsyncComponent(() => import('./shared/layouts/base.vue'))
+const auth = defineAsyncComponent(() => import('./shared/layouts/auth.vue'))
 
 const route = useRoute()
 
