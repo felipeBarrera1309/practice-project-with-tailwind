@@ -1,5 +1,5 @@
 <template>
-    <div v-if="showLoading" class="d-middle-center w-full h-screen">
+    <div v-if="showLoading" class="flex items-center w-full h-full">
         <Vue3Lottie :animation-data="animation" :loop="true" height="272px" />
     </div>
 </template>

@@ -1,0 +1,16 @@
+body {
+	height: 100dvh;
+	width: 100dvw;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+#app {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+a{ text-decoration: none; }

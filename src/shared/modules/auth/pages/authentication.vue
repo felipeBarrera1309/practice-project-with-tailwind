@@ -3,12 +3,12 @@
         <Form @submit="sendForm" class="flex flex-col items-center gap-y-6">
             <Field
                 v-slot="{ field, errorMessage }"
-                name="email"
-                type="email"
-                rules="required|email"
+                name="username"
+                type="text"
+                rules="required"
                 class="h-[40px] w-[300px] border-2 rounded-md border-violet-700"
             >
-                <el-input type="email" v-model="writeEmail" v-bind="field" placeholder="Correo electrónico" class="max-w-[300px] h-[40px]" />
+                <el-input type="email" v-model="writeEmail" v-bind="field" placeholder="Username" class="max-w-[300px] h-[40px]" />
                 <span class="text-red-500">{{ errorMessage }}</span>
             </Field>
 
@@ -30,12 +30,20 @@
 <script setup>
 import { ref } from 'vue'
 import { Form, Field } from 'vee-validate'
+import AuthService from '../../../../services/AuthService.js'
 
 const writeEmail = ref('')
 const writePassword = ref('')
 
-function sendForm(value){
-    console.log('Este es el valor del parametro que me envia vee-validate: ', value);
+
+async function sendForm(){
+	const auth = new AuthService()
+	const success = await auth.setLogin(writeEmail.value, writePassword.value)
+	if(success){
+		alert('Ingresado de manera correcta')
+	}else{
+		alert('Rechazado')
+	}
 }
 
 </script>
