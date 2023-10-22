@@ -11,6 +11,7 @@ export default [
         {
             path: '/main',
             name: 'main',
+            redirect: { name: 'pinia' },
             component: () => import('../pages/home.vue'),
             children: [
                 {

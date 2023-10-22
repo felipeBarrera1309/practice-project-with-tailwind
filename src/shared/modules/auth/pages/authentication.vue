@@ -30,19 +30,32 @@
 <script setup>
 import { ref } from 'vue'
 import { Form, Field } from 'vee-validate'
+import { useRouter } from 'vue-router'
 import AuthService from '../../../../services/AuthService.js'
+import { ElNotification } from 'element-plus'
 
 const writeEmail = ref('')
 const writePassword = ref('')
+const router = useRouter()
 
 
 async function sendForm(){
 	const auth = new AuthService()
 	const success = await auth.setLogin(writeEmail.value, writePassword.value)
 	if(success){
-		alert('Ingresado de manera correcta')
+        console.log('Estos son los metodos hechos en la instancia: ', auth.getTokenService());
+		ElNotification({
+            title: 'Exito',
+            message: 'Datos correctos',
+            type: 'success'
+        })
+        router.push({ name: 'main' })
 	}else{
-		alert('Rechazado')
+		ElNotification({
+            title: 'Error',
+            message: 'Datos incorrectos',
+            type: 'error'
+        })
 	}
 }
 
