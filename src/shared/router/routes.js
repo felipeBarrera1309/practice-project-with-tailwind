@@ -5,7 +5,7 @@ export default [
         path: '/',
         name: 'home',
         component: () => import('../pages/home.vue'),
-        redirect: { name: 'login' },
+        redirect: { name: 'main' },
         children: [
             ...Auth,
         {
