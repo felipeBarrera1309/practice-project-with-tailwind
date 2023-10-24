@@ -44,6 +44,7 @@ async function sendForm(){
 	const success = await auth.setLogin(writeEmail.value, writePassword.value)
 	if(success){
         console.log('Estos son los metodos hechos en la instancia: ', auth.getTokenService());
+        $cookies.set('token', auth.getTokenService())
 		ElNotification({
             title: 'Exito',
             message: 'Datos correctos',

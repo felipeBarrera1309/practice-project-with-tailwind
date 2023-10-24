@@ -4,8 +4,10 @@ import 'element-plus/dist/index.css'
 import app from './app.js'
 import router from './shared/router'
 import './plugins'
+import VueCookies from 'vue-cookies'
 
 app.use(router)
+app.use(VueCookies, { expires: '1d' })
 app.use(ElementPlus)
 app.mount("#app");
 
