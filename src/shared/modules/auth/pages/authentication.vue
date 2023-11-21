@@ -39,25 +39,25 @@ const writePassword = ref('')
 const router = useRouter()
 
 
-async function sendForm(){
-	const auth = new AuthService()
-	const success = await auth.setLogin(writeEmail.value, writePassword.value)
-	if(success){
-        console.log('Estos son los metodos hechos en la instancia: ', auth.getTokenService());
-        $cookies.set('token', auth.getTokenService())
-		ElNotification({
-            title: 'Exito',
-            message: 'Datos correctos',
-            type: 'success'
-        })
-        router.push({ name: 'main' })
-	}else{
-		ElNotification({
-            title: 'Error',
-            message: 'Datos incorrectos',
-            type: 'error'
-        })
-	}
+function sendForm(){
+	console.log('Este es el que inicia en el login');
+	router.push({ name: 'main' })
+	// const auth = new AuthService()
+	// const success = await auth.setLogin(writeEmail.value, writePassword.value)
+	// if(success){
+    //     $cookies.set('token', auth.getTokenService())
+	// 	ElNotification({
+    //         title: 'Exito',
+    //         message: 'Datos correctos',
+    //         type: 'success'
+    //     })
+	// }else{
+	// 	ElNotification({
+    //         title: 'Error',
+    //         message: 'Datos incorrectos',
+    //         type: 'error'
+    //     })
+	// }
 }
 
 </script>

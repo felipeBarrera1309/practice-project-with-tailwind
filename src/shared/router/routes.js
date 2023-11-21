@@ -14,6 +14,11 @@ export default [
             redirect: { name: 'pinia' },
             component: () => import('../pages/home.vue'),
             children: [
+				{
+					path: 'quill-editor',
+					name: 'quill.editor',
+					component: () => import('../components/quillEditor.vue')
+				},
                 {
                     path: 'pinia',
                     name: 'pinia',
