@@ -7,6 +7,7 @@ import './plugins'
 import VueCookies from 'vue-cookies'
 import './util/customComponents.js'
 
+
 app.use(router)
 app.use(VueCookies, { expires: '1d' })
 app.use(ElementPlus)
