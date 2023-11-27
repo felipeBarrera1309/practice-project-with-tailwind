@@ -21,7 +21,6 @@ const refContentQuill = ref()
 const quill = ref()
 
 onMounted(() => {
-	console.log('Este es el contenedor el cual voy a colocar el quill editor: ', refContentQuill.value);
 	const fullToolbarOptions = [
 		[{ 'header': [1, 2, 3, false] }],
 		['bold', 'italic', 'underline'],
@@ -49,17 +48,6 @@ onMounted(() => {
 
 // functions
 
-// function executeAction(){
-	// Este es el metodo para eliminar todo el contenido que esta escrito dentro del quill editor.
-	// quill.value.deleteText(0, quill.value.container.firstChild.textContent.length)
 
-	// Este es el metodo para obtener todo el contenido que esta dentro del input quill.editor.
-	// quill.value.getContents()
-	// console.log('Este obtiene todo el contenido que esta dentro del quillEditor: ', quill.value.getContents());
-	//
-	// console.log('Este es para obtener toda la longitud del contenido que esta dentro del quillEditor: ', quill.value.getLength());
-	// writeText.value = quill.value.container.firstChild.innerHTML
-	
-// }
 
 </script>
