@@ -5,7 +5,6 @@ import app from './app.js'
 import router from './shared/router'
 import './plugins'
 import VueCookies from 'vue-cookies'
-import './util/customComponents.js'
 
 
 app.use(router)
