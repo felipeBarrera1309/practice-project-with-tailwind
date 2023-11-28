@@ -1,5 +1,5 @@
 <template>
-	<div class="mx-auto overflow-auto max-w-[800px] w-full h-[600px] my-5">
+	<div class="text-editor flex flex-col-reverse mx-auto overflow-auto max-w-[800px] w-full h-[600px] my-5">
 		<div ref="refContentQuill" class="overflow-auto min-h-[100px]" />
 	</div>
 </template>
@@ -44,6 +44,13 @@ onMounted(() => {
 		},
 		placeholder: 'props.placeholderText',
 	})
+
+	function ejecutarEvento(){
+		console.log('Esto se ejecuta en cualquier evento emitido por el quillEditor internamente y cuando el usuario interactue con el quill');
+	}
+
+	quill.value.on('text-change', ejecutarEvento)
+	quill.value.off('text-change', ejecutarEvento)
 })
 
 // functions
@@ -51,3 +58,25 @@ onMounted(() => {
 
 
 </script>
+
+<style lang="scss" >
+.text-editor{
+	border: 1px solid purple;
+	border-radius: 8px;
+	position: relative;
+
+	.ql-toolbar.ql-snow {
+		position: sticky;
+		top: 0px;
+		border: none;
+	}
+	.ql-toolbar.ql-snow + .ql-container.ql-snow {
+		overflow: auto;
+		max-height: 100%;
+		border: none;
+	}
+	.ql-container.ql-snow {
+		border: none;
+	}
+}
+</style>
